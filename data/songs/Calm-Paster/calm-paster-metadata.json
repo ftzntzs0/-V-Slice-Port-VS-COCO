@@ -1,0 +1,17 @@
+{
+	"timeFormat": "ms",
+	"artist": "LITERALLYNOONE",
+	"charter": "PunkinMike",
+	"playData": {
+		"stage": "park-night",
+		"noteStyle": "funkin",
+		"difficulties": ["easy", "normal", "hard"],
+		"characters": {"girlfriend": "gf-coco", "opponent": "sketch", "player": "bf-coco"}
+	},
+	"songName": "Calm-Paster",
+	"timeChanges": [
+		{"t": 0, "bpm": 128}
+	],
+	"generatedBy": "Psych Engine v1.0.4 - Chart Editor V-Slice Exporter",
+	"version": "2.2.3"
+}

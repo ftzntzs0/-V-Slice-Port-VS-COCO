@@ -1,0 +1,32 @@
+{
+ "version": "1.0.2",
+ "name": "Park",
+ "props": [
+  {
+   "assetPath": "background/park_bg_1",
+   "atlasSettings": null,
+   "name": "BG",
+   "position": [-825, -200],
+   "scale": 1,
+   "startingAnimation": ""
+  }
+ ],
+ "characters": {
+  "bf": {
+   "cameraOffsets": [-100, -100],
+   "position": [1006.5, 899],
+   "zIndex": 300
+  },
+  "dad": {
+   "cameraOffsets": [150, -100],
+   "position": [250, 825],
+   "zIndex": 200
+  },
+  "gf": {
+   "cameraOffsets": [0, 0],
+   "position": [739.5, 791],
+   "zIndex": 100
+  }
+ },
+ "cameraZoom": 0.9
+}

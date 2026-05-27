@@ -1,0 +1,27 @@
+import funkin.play.character.MultiSparrowCharacter;
+import flixel.addons.display.FlxRuntimeShader;
+
+class CocoCharacter extends MultiSparrowCharacter {
+	function new() {
+		super('coco');
+	}
+
+	override function onCreate(event:ScriptEvent) {
+		super.onCreate(event);	
+
+
+		var shaderCode:String = "
+			#pragma header
+			void main() {
+				vec4 color = flixel_texture2D(bitmap, openfl_TextureCoordv);
+				if (color.a > 0.0) {
+					color.rgb *= vec3(0.8745, 0.6353, 0.5176);
+				}
+				gl_FragColor = color;
+			}
+		";
+		
+
+		this.shader = new FlxRuntimeShader(shaderCode, null);
+	}
+}

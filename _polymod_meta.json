@@ -1,0 +1,22 @@
+{
+    "title": "FNF Rivals",
+    "description": "A Port of FNF Rivals into V-Slice",
+    "contributors": [
+    {
+      "name": "Shoyo!",
+      "role": "Porting / Coding"
+    },
+    {
+      "name": "Latejuli",
+      "role": "Stage/chart port"
+    },
+    {
+      "name": "FNF Rivals DEVs",
+      "role": "Made the original mod",
+      "url": "https://gamebanana.com/mods/514364"
+    }
+    ],
+    "api_version": "0.8.0",
+    "mod_version": "1.1.1",
+    "license": "CC BY 4.0,MIT"
+}

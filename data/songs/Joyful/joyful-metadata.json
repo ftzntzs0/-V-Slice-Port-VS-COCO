@@ -1,0 +1,17 @@
+{
+	"timeFormat": "ms",
+	"artist": "LITERALLYNOONE",
+	"charter": "PunkinMike",
+	"playData": {
+		"stage": "park",
+		"noteStyle": "funkin",
+		"difficulties": ["easy", "normal", "hard"],
+		"characters": {"girlfriend": "gf-coco", "opponent": "coco", "player": "bf-coco"}
+	},
+	"songName": "Joyful",
+	"timeChanges": [
+		{"t": 0, "bpm": 180}
+	],
+	"generatedBy": "Psych Engine v1.0.4 - Chart Editor V-Slice Exporter",
+	"version": "2.2.3"
+}
