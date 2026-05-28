@@ -1,17 +1,41 @@
 {
-	"timeFormat": "ms",
-	"artist": "LITERALLYNOONE",
-	"charter": "PunkinMike",
-	"playData": {
-		"stage": "park-night",
-		"noteStyle": "funkin",
-		"difficulties": ["easy", "normal", "hard"],
-		"characters": {"girlfriend": "gf-coco", "opponent": "sketch", "player": "bf-coco"}
-	},
-	"songName": "Calm-Paster",
-	"timeChanges": [
-		{"t": 0, "bpm": 128}
-	],
-	"generatedBy": "Psych Engine v1.0.4 - Chart Editor V-Slice Exporter",
-	"version": "2.2.3"
+ "version": "2.2.4",
+ "songName": "Calm Paster",
+ "artist": "LITERALLYNOONE",
+ "charter": "PunkinMike",
+ "offsets": { },
+ "playData": {
+  "difficulties": [
+   "easy",
+   "normal",
+   "hard"
+  ],
+  "characters": {
+   "player": "bf-coco",
+   "girlfriend": "gf-coco",
+   "opponent": "sketch",
+   "opponentVocals": [
+    "sketch"
+   ],
+   "playerVocals": [
+    "bf-coco"
+   ]
+  },
+  "stage": "park",
+  "noteStyle": "funkin",
+  "ratings": {
+   "normal": 0,
+   "hard": 0
+  },
+  "previewEnd": 0.2
+ },
+ "generatedBy": "Friday Night Funkin' - v0.8.4",
+ "timeChanges": [
+  {
+   "t": 0,
+   "b": 0,
+   "bpm": 128,
+   "bt": [4, 4, 4, 4]
+  }
+ ]
 }

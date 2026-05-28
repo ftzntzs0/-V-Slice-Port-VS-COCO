@@ -1,0 +1,97 @@
+import funkin.play.stage.Stage;
+import funkin.play.PlayState;
+import flixel.addons.display.FlxRuntimeShader;
+import funkin.Paths;
+import flixel.FlxSprite;
+
+class Park extends Stage {
+	var customShader:FlxRuntimeShader;
+	var shaderCode:String = "
+		#pragma header
+		void main() {
+			vec4 color = flixel_texture2D(bitmap, openfl_TextureCoordv);
+			if (color.a > 0.0) {
+				color.rgb *= vec3(0.8745, 0.6353, 0.5176);
+			}
+			gl_FragColor = color;
+		}
+	";
+
+	var sketchShader:FlxRuntimeShader;
+	var sketchShaderCode:String = "
+		#pragma header
+		void main() {
+			vec4 color = flixel_texture2D(bitmap, openfl_TextureCoordv);
+			if (color.a > 0.0) {
+				color.rgb *= vec3(0.5098, 0.5137, 0.5961);
+			}
+			gl_FragColor = color;
+		}
+	";
+
+	// Inicializando a variável explicitamente como null
+	var stars:FlxSprite = null;
+
+	public function new() {
+		super('park');
+	}
+
+	override function onCreate(event:ScriptEvent) {
+		super.onCreate(event);
+		
+		customShader = new FlxRuntimeShader(shaderCode);
+		sketchShader = new FlxRuntimeShader(sketchShaderCode);
+	}
+
+	override function onCountdownStart(event:ScriptEvent) { 
+		super.onCountdownStart(event);
+		setupCharacterShaders();
+	}
+
+	function setupCharacterShaders() {
+		var stage = PlayState.instance.currentStage;
+		
+		var shaderParaUsar:FlxRuntimeShader = customShader;
+		
+		if (stage.getDad() != null && stage.getDad().characterName == "Sketch") {
+			shaderParaUsar = sketchShader; 
+			
+			
+			var bg = stage.getNamedProp("BG");
+			if (bg != null) {
+				bg.loadGraphic(Paths.image("background/night"));
+
+				if (stars != null && stage.members.indexOf(stars) == -1) {
+					stars = null;
+				}
+				
+				if (stars == null) {
+					stars = new FlxSprite(-560, 160);
+					stars.frames = Paths.getSparrowAtlas("background/stars");
+					stars.animation.addByPrefix("idle", "stars", 24, true);
+					stars.animation.play("idle");
+					stars.scrollFactor.set(bg.scrollFactor.x, bg.scrollFactor.y);
+					
+					stage.insert(stage.members.indexOf(bg) + 1, stars);
+				}
+				
+			}
+		}
+
+		if (stage.getDad() != null) {
+			stage.getDad().shader = shaderParaUsar;
+		}
+
+		if (stage.getGirlfriend() != null) {
+			stage.getGirlfriend().shader = shaderParaUsar;
+		}
+
+		if (stage.getBoyfriend() != null) {
+			stage.getBoyfriend().shader = shaderParaUsar;
+		}
+		if (PlayState.instance.healthBar != null) {
+            PlayState.instance.healthBar.createFilledBar(0xFFA37E6A, 0xFF31B0D1);
+            PlayState.instance.healthBar.updateBar();
+        }
+	}
+}

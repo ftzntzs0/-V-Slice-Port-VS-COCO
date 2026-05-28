@@ -1,17 +1,36 @@
 {
-	"timeFormat": "ms",
-	"artist": "LITERALLYNOONE",
-	"charter": "PunkinMike",
-	"playData": {
-		"stage": "park",
-		"noteStyle": "funkin",
-		"difficulties": ["easy", "normal", "hard"],
-		"characters": {"girlfriend": "gf-coco", "opponent": "coco", "player": "bf-coco"}
-	},
-	"songName": "Joyful",
-	"timeChanges": [
-		{"t": 0, "bpm": 180}
-	],
-	"generatedBy": "Psych Engine v1.0.4 - Chart Editor V-Slice Exporter",
-	"version": "2.2.3"
+ "version": "2.2.4",
+ "songName": "Joyful",
+ "artist": "LITERALLYNOONE",
+ "charter": "PunkinMike",
+ "offsets": { },
+ "playData": {
+  "difficulties": [
+   "easy",
+   "normal",
+   "hard"
+  ],
+  "characters": {
+   "player": "bf-coco",
+   "girlfriend": "gf-coco",
+   "opponent": "coco",
+   "opponentVocals": [
+    "coco"
+   ],
+   "playerVocals": [
+    "bf-coco"
+   ]
+  },
+  "stage": "park",
+  "noteStyle": "funkin"
+ },
+ "generatedBy": "Friday Night Funkin' - v0.8.4",
+ "timeChanges": [
+  {
+   "t": 0,
+   "b": 0,
+   "bpm": 180,
+   "bt": [4, 4, 4, 4]
+  }
+ ]
 }
