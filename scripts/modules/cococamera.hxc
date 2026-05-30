@@ -1,0 +1,78 @@
+import funkin.play.PlayState;
+import funkin.modding.module.Module;
+import flixel.math.FlxMath;
+
+class CocoCamera extends Module {
+
+	var offsetX:Float = 0;
+	var offsetY:Float = 0;
+
+	var targetX:Float = 0;
+	var targetY:Float = 0;
+
+	public function new() {
+		super("Coco Camera");
+	}
+
+	function isTargetOpponent():Bool {
+		var stage = PlayState.instance.currentStage;
+		if (stage != null && stage.getDad() != null) {
+			var dadName = stage.getDad().characterName;
+			
+			if (dadName == "Coco" || dadName == "Sketch") {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	override function onNoteHit(event) {
+		super.onNoteHit(event);
+
+		if (PlayState.instance == null || event.note == null) return;
+		if (event.note.noteData.getMustHitNote() == true) return;
+		
+		if (!isTargetOpponent()) return;
+
+		applyDirection(event.note.direction);
+	}
+
+	override function onOpponentNoteHit(event) {
+		super.onOpponentNoteHit(event);
+
+		if (PlayState.instance == null || event.note == null) return;
+
+		if (!isTargetOpponent()) return;
+
+		applyDirection(event.note.direction);
+	}
+
+	function applyDirection(dir:Int) {
+		targetX = 0;
+		targetY = 0;
+
+		switch(dir) {
+			case 0: targetX = -20; 
+			case 1: targetY = 20;  
+			case 2: targetY = -15; 
+			case 3: targetX = 19;  
+		}
+	}
+
+	override function onUpdate(event) {
+		super.onUpdate(event);
+		
+		if (PlayState.instance == null) return;
+
+		var cam = PlayState.instance.camGame;
+		if (cam == null) return;
+
+		targetX = FlxMath.lerp(targetX, 0, 0.05);
+		targetY = FlxMath.lerp(targetY, 0, 0.05);
+
+		offsetX = FlxMath.lerp(offsetX, targetX, 0.20);
+		offsetY = FlxMath.lerp(offsetY, targetY, 0.20);
+
+		cam.targetOffset.set(offsetX, offsetY);
+	}
+}

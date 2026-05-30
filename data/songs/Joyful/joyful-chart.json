@@ -7,6 +7,19 @@
  },
  "events": [
   {
+   "t": 0,
+   "e": "ZoomCamera",
+   "v": {
+	"duration": 2,
+	"widescreenScaleX": 0,
+	"widescreenScaleY": 0,
+	"ease": "linear",
+	"mode": "direct",
+	"zoom": 1.25,
+	"easeDir": "In"
+}
+  },
+  {
    "t": 5333.33333333333,
    "e": "FocusCamera",
    "v": {
