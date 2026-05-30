@@ -4,6 +4,10 @@
     "renderType": "multisparrow",
     "assetPath": "characters/sketch_assets",
     "flipX": false,
+    "cameraOffsets": [
+		0,
+		60
+	],
     "singTime": 4,
     "animations": [
         {
