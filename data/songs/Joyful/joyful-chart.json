@@ -14,9 +14,9 @@
 	"widescreenScaleX": 0,
 	"widescreenScaleY": 0,
 	"ease": "linear",
-	"mode": "direct",
+	"easeDir": "In",
 	"zoom": 1.25,
-	"easeDir": "In"
+	"mode": "direct"
 }
   },
   {
@@ -65,9 +65,9 @@
    "t": 31583.3333333333,
    "e": "PlayAnimation",
    "v": {
-	"force": false,
+	"target": "dad",
 	"anim": "cheer",
-	"target": "dad"
+	"force": false
 }
   },
   {
@@ -117,6 +117,18 @@
    "e": "FocusCamera",
    "v": {
 	"char": 0
+}
+  },
+  {
+   "t": 85333.3333333333,
+   "e": "FocusCamera",
+   "v": {
+	"x": -80,
+	"duration": 4,
+	"y": 80,
+	"char": 1,
+	"ease": "CLASSIC",
+	"easeDir": "In"
 }
   }
  ],
