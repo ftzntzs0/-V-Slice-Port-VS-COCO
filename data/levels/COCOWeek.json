@@ -1,16 +1,19 @@
 {
   "version": "1.0.0",
-  "name": "DADDY DEAREST",
-  "titleAsset": "storymenu/titles/week1",
+  "name": "WHAT DA DOG DOIN'",
+  "capsule": {
+    "name": "VS COCO"
+  },
+  "titleAsset": "storymenu/titles/coco",
   "props": [
     {
-      "assetPath": "storymenu/props/dad",
-      "scale": 1.0,
-      "offsets": [100, 60],
+      "assetPath": "storymenu/props/coco",
+      "scale": 0.7,
+      "offsets": [100, 80],
       "animations": [
         {
           "name": "idle",
-          "prefix": "idle0",
+          "prefix": "coco stance BLACK LINES0",
           "frameRate": 24
         }
       ]

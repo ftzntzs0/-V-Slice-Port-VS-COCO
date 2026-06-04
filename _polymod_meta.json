@@ -1,22 +1,18 @@
 {
-    "title": "FNF Rivals",
-    "description": "A Port of FNF Rivals into V-Slice",
+    "title": "VS Coco",
+    "description": "A Port of Vs Coco into V-Slice",
     "contributors": [
     {
       "name": "Shoyo!",
-      "role": "Porting / Coding"
+      "role": "the whole port"
     },
     {
-      "name": "Latejuli",
-      "role": "Stage/chart port"
-    },
-    {
-      "name": "FNF Rivals DEVs",
+      "name": "Vs Coco DEVs",
       "role": "Made the original mod",
-      "url": "https://gamebanana.com/mods/514364"
+      "url": "https://gamebanana.com/mods/328557"
     }
     ],
-    "api_version": "0.8.0",
+    "api_version": "0.8.4",
     "mod_version": "1.1.1",
     "license": "CC BY 4.0,MIT"
 }

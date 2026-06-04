@@ -20,6 +20,18 @@
 }
   },
   {
+   "t": 0,
+   "e": "FocusCamera",
+   "v": {
+	"duration": 4,
+	"x": 0,
+	"y": 0,
+	"ease": "CLASSIC",
+	"char": 1,
+	"easeDir": "In"
+}
+  },
+  {
    "t": 8000,
    "e": "FocusCamera",
    "v": {

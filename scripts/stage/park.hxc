@@ -30,6 +30,9 @@ class Park extends Stage {
 	var bgNormal:Dynamic = null;
 	var stars:FlxSprite = null;
 
+	
+	var hudBar:FlxSprite = null;
+
 	var coco:Dynamic = null; 
 	var fakeSketch:Dynamic = null;
 
@@ -72,6 +75,26 @@ class Park extends Stage {
 			var sId = PlayState.instance.currentSong.id.toLowerCase();
 			if (sId.indexOf("calm") != -1 && sId.indexOf("paster") != -1) isCalmPaster = true;
 			if (sId.indexOf("joyful") != -1) isJoyful = true;
+		}
+
+		
+		if (hudBar == null && PlayState.instance.healthBar != null) {
+			hudBar = new FlxSprite();
+			hudBar.frames = Paths.getSparrowAtlas("bar"); 
+			hudBar.animation.addByPrefix("idle", "WHITE0000", 24, true); 
+			hudBar.animation.play("idle");
+			
+			hudBar.scrollFactor.set(0, 0); 
+			hudBar.cameras = [PlayState.instance.camHUD]; 
+			
+			hudBar.updateHitbox();
+			
+			
+			hudBar.x = PlayState.instance.healthBar.x + (PlayState.instance.healthBar.width - hudBar.width) / 2;
+			
+			hudBar.y = PlayState.instance.healthBar.y + PlayState.instance.healthBar.height -50;
+			
+			PlayState.instance.add(hudBar); 
 		}
 
 		if (bgNight == null) {
@@ -277,6 +300,16 @@ class Park extends Stage {
 			
 			if (segurandoNota) coco.holdTimer = 0; 
 		}
+
+		
+		if (PlayState.instance.scoreText != null && PlayState.instance.healthBar != null) {
+			
+			PlayState.instance.scoreText.x = PlayState.instance.healthBar.x + (PlayState.instance.healthBar.width - PlayState.instance.scoreText.width) / 2 + 300;
+			
+			
+			PlayState.instance.scoreText.y = PlayState.instance.healthBar.y + 45; 
+		}
+
 		if (PlayState.instance.currentStage.getBoyfriend() != null && !PlayState.instance.iconP1.isLegacyStyle) PlayState.instance.iconP1.isLegacyStyle = true;
 		if (PlayState.instance.currentStage.getDad() != null && !PlayState.instance.iconP2.isLegacyStyle) PlayState.instance.iconP2.isLegacyStyle = true;
 	}
@@ -287,5 +320,6 @@ class Park extends Stage {
 		fakeSketch = null;
 		bgNight = null;
 		stars = null;
+		hudBar = null; 
 	}
 }

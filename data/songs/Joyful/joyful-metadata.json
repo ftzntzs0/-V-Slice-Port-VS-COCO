@@ -1,7 +1,7 @@
 {
  "version": "2.2.4",
  "songName": "Joyful",
- "artist": "LITERALLYNOONE",
+ "artist": "Tictacto",
  "charter": "PunkinMike",
  "offsets": { },
  "playData": {
@@ -22,7 +22,13 @@
    ]
   },
   "stage": "park",
-  "noteStyle": "funkin"
+  "noteStyle": "funkin",
+  "ratings": {
+   "easy": 3,
+   "normal": 5,
+   "hard": 7
+  },
+  "album": "coco"
  },
  "generatedBy": "Friday Night Funkin' - v0.8.4",
  "timeChanges": [

@@ -1,7 +1,7 @@
 {
  "version": "2.2.4",
  "songName": "Calm Paster",
- "artist": "LITERALLYNOONE",
+ "artist": "jabibixd",
  "charter": "PunkinMike",
  "offsets": { },
  "playData": {
@@ -24,10 +24,12 @@
   "stage": "park",
   "noteStyle": "funkin",
   "ratings": {
-   "normal": 0,
-   "hard": 0
+   "easy": 2,
+   "normal": 3,
+   "hard": 6
   },
-  "previewEnd": 0.2
+  "previewEnd": 0.2,
+  "album": "coco"
  },
  "generatedBy": "Friday Night Funkin' - v0.8.4",
  "timeChanges": [
