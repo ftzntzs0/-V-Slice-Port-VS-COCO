@@ -109,6 +109,10 @@ class Park extends Stage {
 				var indexNight = stage.members.indexOf(bgNight);
 				if (indexNight != -1) stage.insert(indexNight + 1, stars);
 				else stage.add(stars);
+				if (PlayState.instance.healthBar != null) {
+			    PlayState.instance.healthBar.createFilledBar(0xFF6B4436, 0xFF31B0D1);
+			    PlayState.instance.healthBar.updateBar();
+		        }     
 			}
 			
 			if (coco == null) {
@@ -152,15 +156,17 @@ class Park extends Stage {
 				if (bgNormal != null) bgNormal.alpha = 0.0;
 			}
 		}
+		if (dad != null && dad.characterName == "Coco") {
+		   	if (PlayState.instance.healthBar != null) {
+			PlayState.instance.healthBar.createFilledBar(0xFFA37E6A, 0xFF31B0D1);
+			PlayState.instance.healthBar.updateBar();
+		}
+		}
 
 		if (dad != null) dad.shader = charShader;
 		if (stage.getGirlfriend() != null) stage.getGirlfriend().shader = charShader;
 		if (stage.getBoyfriend() != null) stage.getBoyfriend().shader = charShader;
 		
-		if (PlayState.instance.healthBar != null) {
-			PlayState.instance.healthBar.createFilledBar(0xFFA37E6A, 0xFF31B0D1);
-			PlayState.instance.healthBar.updateBar();
-		}
 	}
 
 	override function onBeatHit(event) {
@@ -271,6 +277,8 @@ class Park extends Stage {
 			
 			if (segurandoNota) coco.holdTimer = 0; 
 		}
+		if (PlayState.instance.currentStage.getBoyfriend() != null && !PlayState.instance.iconP1.isLegacyStyle) PlayState.instance.iconP1.isLegacyStyle = true;
+		if (PlayState.instance.currentStage.getDad() != null && !PlayState.instance.iconP2.isLegacyStyle) PlayState.instance.iconP2.isLegacyStyle = true;
 	}
 
 	override function onDestroy(event) {
